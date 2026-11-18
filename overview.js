@@ -43,7 +43,7 @@ async function loadStats() {
       .join("");
   } catch (error) {
     if (statsContainer) {
-      statsContainer.innerHTML =`
+      statsContainer.innerHTML = `
       <div class="col-12">
           <div class="alert alert-danger">Sorry, the statistics could not be loaded. Please try again later.</div>
         </div>`;
