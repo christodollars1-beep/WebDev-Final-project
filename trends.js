@@ -6,6 +6,18 @@ let records = [];
 
 function renderRows(list) {
   trendsTableBody.innerHTML = "";
+  
+  if (list.length === 0) {
+    trendsTableBody.innerHTML = `
+      <tr>
+        <td colspan="4">
+          <div class="alert alert-info">No years match that search.</div>
+        </td>
+      </tr>
+    `;
+    return;
+  }
+
   list.forEach((record) => {
     const row = document.createElement("tr");
     row.innerHTML = `
