@@ -6,7 +6,7 @@ let records = [];
 
 function renderRows(list) {
   trendsTableBody.innerHTML = "";
-  
+
   if (list.length === 0) {
     trendsTableBody.innerHTML = `
       <tr>
@@ -18,13 +18,13 @@ function renderRows(list) {
     return;
   }
 
-  list.forEach((record) => {
+ list.forEach((record) => {
     const row = document.createElement("tr");
     row.innerHTML = `
       <td>${record.year}</td>
-      <td>${record.filed}</td>
-      <td>${record.grants}</td>
-      <td>${record.denials}</td>`;
+      <td class="text-end">${Number(record.filed).toLocaleString()}</td>
+      <td class="text-end">${Number(record.grants).toLocaleString()}</td>
+      <td class="text-end">${Number(record.denials).toLocaleString()}</td>`;
     trendsTableBody.appendChild(row);
   });
 }
